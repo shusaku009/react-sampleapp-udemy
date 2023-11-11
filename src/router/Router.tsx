@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { Login } from "../componens/pages/Login";
 import { homeRoutes } from "./HomeRoute";
 import { Page404 } from "../componens/pages/Page404";
+import { HeaderLayout } from "../componens/templates/HeaderLayout";
 
 export const Router: VFC = memo(() => {
   return (
@@ -19,7 +20,7 @@ export const Router: VFC = memo(() => {
               exact={route.exact}
               path={`${url}${route.path}`}
             >
-              {route.children}
+              <HeaderLayout>{route.children}</HeaderLayout>
             </Route>
           ))}
         </Switch>
